@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": "http://timesheet-env.eba-m6xmttyu.us-east-1.elasticbeanstalk.com/",
+        "paths": {
+            "@/*": ["resources/js/*"]
+        }
+    },
+    "exclude": ["node_modules", "public"]
+}
