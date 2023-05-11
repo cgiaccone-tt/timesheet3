@@ -25,6 +25,18 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/blog', function () {
+    return Inertia::render('Blog');
+})->name('blog');
+
+Route::get('/admin', function () {
+    return Inertia::render('Admin/Index');
+})->name('admin');
+
+Route::get('/todoapp', function () {
+    return Inertia::render('TodoApp/Index');
+})->name('todoapp');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
