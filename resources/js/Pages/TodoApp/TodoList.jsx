@@ -9,8 +9,8 @@ import { TodosContext } from '/resources/js/context/TodosContext';
 
 function TodoList() {
     const { todos, setTodos, todosFiltered } = useContext(TodosContext);
-    const [isFeaturesOneVisible, setFeaturesOneVisible] = useToggle();
-    const [isFeaturesTwoVisible, setFeaturesTwoVisible] = useToggle();
+    const [isFeaturesOneVisible, setFeaturesOneVisible] = useToggle('isFeaturesOneVisible', true);
+    const [isFeaturesTwoVisible, setFeaturesTwoVisible] = useToggle('isFeaturesTwoVisible', true);
 
     function deleteTodo(id) {
         setTodos([...todos].filter(todo => todo.id !== id));

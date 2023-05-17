@@ -14,10 +14,17 @@ function TodoCompleteAllTodos() {
         setTodos(updatedTodos);
     }
 
+    function atLeastOneTodoIsNotComplete() {
+        return todos.some(todo => !todo.isComplete);
+    }
+
     return (
         <div>
             {
-                todosFiltered().length === 0 ? (
+                //setFilter('completed')
+            }
+            {
+                !atLeastOneTodoIsNotComplete() ? (
                     <div onClick={() => completeAllTodos(false)} className="button">
                         Uncheck All
                     </div>
@@ -26,6 +33,7 @@ function TodoCompleteAllTodos() {
                         Check All
                     </div>
                 )}
+            { setFilter(prevFilter => prevFilter) }
         </div>
     );
 }
