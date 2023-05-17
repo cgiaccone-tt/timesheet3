@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { TodosContext } from '/resources/js/context/TodosContext';
 
 function TodoCompleteAllTodos() {
-    const { todos, setTodos, todosFiltered, setFilter } = useContext(TodosContext);
+    const { todos, setTodos, setFilter } = useContext(TodosContext);
 
     function completeAllTodos( complete = true ) {
         const updatedTodos = todos.map(todo => {
@@ -21,9 +21,6 @@ function TodoCompleteAllTodos() {
     return (
         <div>
             {
-                //setFilter('completed')
-            }
-            {
                 !atLeastOneTodoIsNotComplete() ? (
                     <div onClick={() => completeAllTodos(false)} className="button">
                         Uncheck All
@@ -33,7 +30,6 @@ function TodoCompleteAllTodos() {
                         Check All
                     </div>
                 )}
-            { setFilter(prevFilter => prevFilter) }
         </div>
     );
 }
