@@ -25,17 +25,32 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/blog', function () {
-    return Inertia::render('Blog');
-})->name('blog');
-
 Route::get('/admin', function () {
     return Inertia::render('Admin/Index');
 })->name('admin');
 
 Route::get('/todoapp', function () {
-    return Inertia::render('TodoApp/Index');
+    return Inertia::render('TodoApp/Root');
 })->name('todoapp');
+
+Route::get('/todoapp/contact', function () {
+    return Inertia::render('TodoApp/pages/Contact');
+})->name('todoapp');
+
+Route::get('/todoapp/about', function () {
+    return Inertia::render('TodoApp/pages/About');
+})->name('todoapp');
+
+Route::get('/todoapp/blog', function () {
+    return Inertia::render('TodoApp/pages/Blog');
+})->name('todoapp');
+
+Route::get('/todoapp/blog/{id}', function ($id) {
+    return Inertia::render('TodoApp/pages/BlogPost',
+    [
+        'id' => $id
+    ]);
+})->name('blogpost');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

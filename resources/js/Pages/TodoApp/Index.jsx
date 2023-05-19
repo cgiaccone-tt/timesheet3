@@ -56,7 +56,6 @@ function TodoApp() {
                 setFilter,
             }}
         >
-            <div className="todo-app-container">
                 <div className="todo-app">
                     <div className="name-container">
                         <h2>What is your name?</h2>
@@ -112,7 +111,6 @@ function TodoApp() {
                     <NoTodos />
           </CSSTransition> */}
             </div>
-        </div>
     </TodosContext.Provider>
     );
 }
