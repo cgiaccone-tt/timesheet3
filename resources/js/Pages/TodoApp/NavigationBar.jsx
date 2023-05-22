@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link, usePage} from '@inertiajs/react'
-const { url, component } = usePage()
+import {Link, usePage} from '@inertiajs/react';
 
 export default function NavigationBar() {
+    const { url} = usePage();
   return (
     <nav>
       <ul>
