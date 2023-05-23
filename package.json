@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "prop-types": "^15.8.1",
+        "react-query": "^3.39.3",
         "react-router-dom": "^6.11.2",
         "react-transition-group": "^4.4.5"
     }

@@ -13,9 +13,14 @@ export default function NavigationBar() {
         </li>
         <li>
             <Link href="/todoapp/about" className={url === '/todoapp/about' ? 'active' : ''}>
-                About
+                RedditJoke-UseFetch
             </Link>
         </li>
+        <li>
+            <Link href="/todoapp/rj-usequery" className={url === '/todoapp/rj-usequery' ? 'active' : ''}>
+                RedditJoke-UseQuery
+            </Link>
+          </li>
         <li>
             <Link href="/todoapp/contact" className={url === '/todoapp/contact' ? 'active' : ''}>
                 Contact

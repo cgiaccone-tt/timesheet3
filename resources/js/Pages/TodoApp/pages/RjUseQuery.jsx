@@ -4,13 +4,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import '/resources/css/TodoReset.css';
 import '/resources/css/TodoApp.css';
-import RedditJoke from './RedditJoke';
+import RedditJoke from './RedditJokeRjUseQuery';
 //import reportWebVitals from './ReportWebVitals';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
 
-export default function About() {
+export default function RjUseQuery() {
     const queryClient = new QueryClient();
     return (
     <div className="todo-app-container">
