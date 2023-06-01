@@ -1,5 +1,5 @@
 import React, { useContext, useMemo } from 'react';
-import { TodosContext } from '/resources/js/context/TodosContext';
+import { TodosContext } from '../../Context/TodosContext';
 
 function TodoItemsRemaining() {
     const { todos } = useContext(TodosContext);

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { TodosContext } from '/resources/js/context/TodosContext';
+import { TodosContext } from '../../Context/TodosContext';
 
 function TodoForm() {
     const { todos, setTodos, idForTodo, setIdForTodo } = useContext(TodosContext);
@@ -23,6 +23,7 @@ function TodoForm() {
                 id: idForTodo,
                 title: todoInput,
                 isComplete: false,
+                isEditing: false,
             },
         ]);
 

@@ -3,8 +3,8 @@ import TodoItemsRemaining from './TodoItemsRemaining';
 import TodoClearCompleted from './TodoClearCompleted';
 import TodoCompleteAllTodos from './TodoCompleteAllTodos';
 import TodoFilters from './TodoFilters';
-import useToggle from '/resources/js/hooks/useToggle';
-import { TodosContext } from '/resources/js/context/TodosContext';
+import useToggle from '../../hooks/useToggle';
+import { TodosContext } from '../../Context/TodosContext';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function TodoList() {

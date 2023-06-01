@@ -3,15 +3,31 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "watch": "vite build --watch"
+        "watch": "vite build --watch",
+        "test": "jest --transformIgnorePatterns \"node_modules\" --env=jsdom"
     },
     "devDependencies": {
+        "@babel/cli": "^7.13.0",
+        "@babel/core": "^7.13.1",
+        "@babel/node": "^7.10.5",
+        "@babel/plugin-transform-modules-commonjs": "^7.13.0",
+        "@babel/preset-env": "^7.11.0",
+        "@babel/preset-react": "^7.12.13",
         "@headlessui/react": "^1.4.2",
         "@inertiajs/react": "^1.0.0",
         "@tailwindcss/forms": "^0.5.3",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^14.0.0",
+        "@testing-library/user-event": "^14.4.3",
         "@vitejs/plugin-react": "^3.0.0",
         "autoprefixer": "^10.4.12",
         "axios": "^1.1.2",
+        "babel-jest": "^26.6.3",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
+        "babel-preset-jest": "^26.6.2",
+        "jest": "^26.6.3",
+        "jest-cli": "^26.6.3",
         "laravel-vite-plugin": "^0.7.2",
         "postcss": "^8.4.18",
         "react": "^18.2.0",
@@ -23,6 +39,7 @@
         "prop-types": "^15.8.1",
         "react-query": "^3.39.3",
         "react-router-dom": "^6.11.2",
-        "react-transition-group": "^4.4.5"
+        "react-transition-group": "^4.4.5",
+        "zustand": "^4.3.8"
     }
 }

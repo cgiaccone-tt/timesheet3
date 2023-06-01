@@ -2,10 +2,10 @@ import { useEffect, useState, useRef } from 'react';
 import NoTodos from './NoTodos';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
-import useLocalStorage from '/resources/js/hooks/useLocalStorage';
-import '/resources/css/TodoReset.css';
-import '/resources/css/TodoApp.css';
-import { TodosContext } from '/resources/js/context/TodosContext';
+import useLocalStorage from '../../hooks/useLocalStorage';
+import '../../../css/TodoReset.css';
+import '../../../css/TodoApp.css';
+import { TodosContext } from '../../Context/TodosContext';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 function TodoApp() {

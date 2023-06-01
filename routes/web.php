@@ -47,7 +47,7 @@ Route::get('/todoapp/rj-usequery', function () {
 
 Route::get('/todoapp/blog', function () {
     return Inertia::render('TodoApp/pages/Blog');
-})->name('todoapp');
+})->name('blog');
 
 Route::get('/todoapp/blog/{id}', function ($id) {
     return Inertia::render('TodoApp/pages/BlogPost',
