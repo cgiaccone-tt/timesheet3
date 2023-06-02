@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import useTodoStore from '../../stores/TodoStore'; 
 import TodoItemsRemaining from './TodoItemsRemaining';
 import TodoClearCompleted from './TodoClearCompleted';
 import TodoCompleteAllTodos from './TodoCompleteAllTodos';
@@ -8,7 +9,8 @@ import { TodosContext } from '../../Context/TodosContext';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function TodoList() {
-    const { todos, setTodos, todosFiltered } = useContext(TodosContext);
+    const { todos, setTodos } = useContext(TodosContext);
+    const todosFiltered = useTodoStore(state => state.todosFiltered);
     const [isFeaturesOneVisible, setFeaturesOneVisible] = useToggle('isFeaturesOneVisible', true);
     const [isFeaturesTwoVisible, setFeaturesTwoVisible] = useToggle('isFeaturesTwoVisible', true);
 

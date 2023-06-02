@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import useTodoStore from '../../stores/TodoStore'; 
 import NoTodos from './NoTodos';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
@@ -9,24 +10,19 @@ import { TodosContext } from '../../Context/TodosContext';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 function TodoApp() {
+    const todos = useTodoStore(state => state.todos);
+    const setTodos = useTodoStore(state => state.setTodos);
+    const idForTodo = useTodoStore(state => state.idForTodo);
+    const setIdForTodo = useTodoStore(state => state.setIdForTodo);
+    const todosFiltered = useTodoStore(state => state.todosFiltered);
     const [name, setName] = useLocalStorage('name', '');
 
     const nameInputEl = useRef(null);
-    const [todos, setTodos] = useLocalStorage('todos', []);
+    //const [todos, setTodos] = useLocalStorage('todos', []);
 
-    const [idForTodo, setIdForTodo] = useLocalStorage('idForTodo', 1);
+    //const [idForTodo, setIdForTodo] = useLocalStorage('idForTodo', 1);
 
     const [filter, setFilter] = useState('all');
-
-    function todosFiltered() {
-        if (filter === 'all') {
-            return todos;
-        } else if (filter === 'active') {
-            return todos.filter(todo => !todo.isComplete);
-        } else if (filter === 'completed') {
-            return todos.filter(todo => todo.isComplete);
-        }
-    }
 
     useEffect(() => {
         // console.log('use effect running');
@@ -47,11 +43,6 @@ function TodoApp() {
     return (
         <TodosContext.Provider
             value={{
-                todos,
-                setTodos,
-                idForTodo,
-                setIdForTodo,
-                todosFiltered,
                 filter,
                 setFilter,
             }}

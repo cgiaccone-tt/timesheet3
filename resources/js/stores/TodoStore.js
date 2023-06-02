@@ -23,6 +23,7 @@ let store = (set, get) => ({
     },
   ],
   idForTodo: 4,
+  filter: 'all',
   addTodo: todoTitle =>
     set(state => ({
       todos: [
@@ -89,6 +90,21 @@ let store = (set, get) => ({
         return todo;
       }),
     })),
+    todosFiltered: () => 
+        set(state => {
+            todos: state.todos.map(
+                todo => {
+                    if (state.filter === 'all') {
+                        //return state.todos;
+                        return todo;
+                    } else if (state.filter === 'active' && !todo.isComplete) {
+                        return todo
+                    } else if (state.filter === 'completed' && todo.isComplete) {
+                        return todo;
+                    }
+                }
+            )
+        }),  
   remaining: () => get().todos.filter(todo => !todo.isComplete).length,
 });
 

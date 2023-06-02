@@ -1,35 +1,14 @@
 import React, { useContext, useState } from 'react';
+import useTodoStore from '../../stores/TodoStore';
 import { TodosContext } from '../../Context/TodosContext';
 
 function TodoForm() {
-    const { todos, setTodos, idForTodo, setIdForTodo } = useContext(TodosContext);
+    const addTodo = useTodoStore(state => state.addTodo);
 
     const [todoInput, setTodoInput] = useState('');
 
     function handleInput(event) {
         setTodoInput(event.target.value);
-    }
-
-    function addTodo(event) {
-        event.preventDefault();
-
-        if (todoInput.trim().length === 0) {
-            return;
-        }
-
-        setTodos([
-            ...todos,
-            {
-                id: idForTodo,
-                title: todoInput,
-                isComplete: false,
-                isEditing: false,
-            },
-        ]);
-
-        setIdForTodo(prevIdForTodo => prevIdForTodo + 1);
-
-        setTodoInput('');
     }
 
     return (
